@@ -1,0 +1,10 @@
+Record=TopLevelDocument|FileName=GSM.SchDoc|SheetNumber=4
+Record=NoMainPathDocument|SourceDocument=GSM.SchDoc|FileName=LAN.SchDoc|SheetNumber=6
+Record=NoMainPathDocument|SourceDocument=GSM.SchDoc|FileName=MCU.SchDoc|SheetNumber=2
+Record=NoMainPathDocument|SourceDocument=GSM.SchDoc|FileName=memory.SchDoc|SheetNumber=10
+Record=NoMainPathDocument|SourceDocument=GSM.SchDoc|FileName=Outputs.SchDoc|SheetNumber=8
+Record=NoMainPathDocument|SourceDocument=GSM.SchDoc|FileName=Power2.SchDoc|SheetNumber=9
+Record=NoMainPathDocument|SourceDocument=GSM.SchDoc|FileName=Power.SchDoc|SheetNumber=1
+Record=NoMainPathDocument|SourceDocument=GSM.SchDoc|FileName=RF & wireless.SchDoc|SheetNumber=5
+Record=NoMainPathDocument|SourceDocument=GSM.SchDoc|FileName=sensors.SchDoc|SheetNumber=7
+Record=NoMainPathDocument|SourceDocument=GSM.SchDoc|FileName=UI.SchDoc|SheetNumber=3

@@ -1,0 +1,437 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD25\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">8/17/2025</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">9:53:00 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc" class="file"><acronym title="C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc">C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">14</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">2</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">PCB Health Issues:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">16</td></tr>
+</table>
+</td>
+</table><a name="ID5B1L0CCGLZ4BPYTM5LZK3G2PDO55ALMCOJ2PUCC5CHE1I3DDMN4B"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDT23QAH3CTW22C5RTOFS52J1ZBPTJFBJVYDDMNODOF24HRW1YW2HE">Design contains shelved or modified (but not repoured) polygons. The result of DRC is not correct. Recommended to restore/repour all polygons and proceed with DRC again</a></td>
+<td class="column2">14</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">14</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAUYM0RQVGC5VBPA43DGGOBUQLKDAG5DRLLISE5CUI0EP3BJNIXTC">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDXAYCLOUIKTRTCS41FVNYSKQN2DTTESTJ5XN0C3C4YPBVXM25CHJL">Routing Topology Rule(Topology=Shortest) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID5ZI5MPYRCJL2EBWNQ21NZTYX2GAJVSXGRORNLGR0AQCCZW3YG2M">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">2</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">PCB Health Issues</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDVKRGSEVJW3B4O04M5GWZUIU3KIWDIZI2JAUBHACQFROARR01C00O">Zero Area Regions</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDGZZ31I5KBCSMB3AZYQCXUK5DR42UHSXQSCIPHN23QFI5MNVRSGJ">Micro-Segments (Board)</a></td>
+<td class="column2">6</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDRSXHI5MCMNBRBSOYP3NPJKIU5D3BXIJT2CFH4YNXJAIVHLON31PH">Self-Intersecting Regions</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDCMDI1GFKOUOUIDITSJ2Y4YN1VP0HN2PGBDE2A2CDVE1N3CIFTKEK">Shelved/Modified Polygons</a></td>
+<td class="column2">7</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">16</td>
+</tr>
+</table><br><a name="IDMSZOO5CRU5GSPIEJ1RJAL3WWJCAUVCBFT0O0ALBVS4CXJ32DPJ3O"><h2>Warnings</h2></a><a name="IDT23QAH3CTW22C5RTOFS52J1ZBPTJFBJVYDDMNODOF24HRW1YW2HE"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="warning">Design contains shelved or modified (but not repoured) polygons. The result of DRC is not correct. Recommended to restore/repour all polygons and proceed with DRC again</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Polygon named: NONET_L01_P009 In net GND On Top Layer</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Polygon named: NONET_L01_P002 In net NetB1_1 On Top Layer</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Polygon named: NONET_L01_P003 In net +5v SW On Top Layer</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Polygon named: NONET_L02_P010 In net GND On Bottom Layer</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Polygon named: NONET_L02_P006 In net VOUT On Bottom Layer</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Polygon named: NONET_L02_P005 In net SW On Bottom Layer</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Polygon named: NONET_L02_P004 In net Boost_in On Bottom Layer</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Polygon named: NONET_L01_P009 In net GND On Top Layer</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Polygon named: NONET_L01_P002 In net NetB1_1 On Top Layer</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Polygon named: NONET_L01_P003 In net +5v SW On Top Layer</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Polygon named: NONET_L02_P010 In net GND On Bottom Layer</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Polygon named: NONET_L02_P006 In net VOUT On Bottom Layer</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Polygon named: NONET_L02_P005 In net SW On Bottom Layer</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Polygon named: NONET_L02_P004 In net Boost_in On Bottom Layer</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDBUU1AMFEENGMN3DUI2T1DL30TDF4XX44BT3F3DHC30KIT5XZJMML"><h2>Rule Violations</h2></a><a name="IDAUYM0RQVGC5VBPA43DGGOBUQLKDAG5DRLLISE5CUI0EP3BJNIXTC"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2294.535mil|Location2.X=2538.535mil|Location1.Y=1738.535mil|Location2.Y=1938.535mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2294.535mil|Location2.X=2538.535mil|Location1.Y=1738.535mil|Location2.Y=1938.535mil|Absolute=True">Un-Routed Net Constraint: Net CH_GND Between Track (36.437mm,26.099mm)(36.449mm,26.111mm) on Top Layer And Track (37.555mm,23.52mm)(37.555mm,26.099mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2915.709mil|Location2.X=3124.322mil|Location1.Y=3711mil|Location2.Y=3949.136mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2915.709mil|Location2.X=3124.322mil|Location1.Y=3711mil|Location2.Y=3949.136mil|Absolute=True">Un-Routed Net Constraint: Net NetIC1_5 Between Track (52.215mm,76.2mm)(52.528mm,75.704mm) on Top Layer And Track (51.671mm,77.169mm)(52.434mm,77.169mm) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID3F25PPVDENWIIHGHUOP35S3NRBUADXAKLXDKSNFEE1YDVIORJHH"><h2>PCB Health Issues</h2></a><a name="IDVKRGSEVJW3B4O04M5GWZUIU3KIWDIZI2JAUBHACQFROARR01C00O"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="health">Zero Area Regions</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=960mil|Location2.X=960mil|Location1.Y=811mil|Location2.Y=811mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=960mil|Location2.X=960mil|Location1.Y=811mil|Location2.Y=811mil|Absolute=True">Zero area region: Region (0 hole(s)) Keep-Out Layer (0mm,0mm)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=960mil|Location2.X=960mil|Location1.Y=811mil|Location2.Y=811mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=960mil|Location2.X=960mil|Location1.Y=811mil|Location2.Y=811mil|Absolute=True">Zero area region: Region (0 hole(s)) Keep-Out Layer (0mm,0mm)</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDGZZ31I5KBCSMB3AZYQCXUK5DR42UHSXQSCIPHN23QFI5MNVRSGJ"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="health">Micro-Segments (Board)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mm|Location2.X=0mm|Location1.Y=0mm|Location2.Y=0mm" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mm|Location2.X=0mm|Location1.Y=0mm|Location2.Y=0mm">Micro-Segment: Region (0 hole(s)) Keep-Out Layer P1(0mm,0mm) P2(0mm,0mm)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mm|Location2.X=0mm|Location1.Y=0mm|Location2.Y=0mm" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mm|Location2.X=0mm|Location1.Y=0mm|Location2.Y=0mm">Micro-Segment: Region (0 hole(s)) Keep-Out Layer P1(0mm,0mm) P2(0mm,0mm)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mm|Location2.X=0mm|Location1.Y=0mm|Location2.Y=0mm" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mm|Location2.X=0mm|Location1.Y=0mm|Location2.Y=0mm">Micro-Segment: Region (0 hole(s)) Keep-Out Layer P1(0mm,0mm) P2(0mm,0mm)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mm|Location2.X=0mm|Location1.Y=0mm|Location2.Y=0mm" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mm|Location2.X=0mm|Location1.Y=0mm|Location2.Y=0mm">Micro-Segment: Region (0 hole(s)) Keep-Out Layer P1(0mm,0mm) P2(0mm,0mm)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mm|Location2.X=0mm|Location1.Y=0mm|Location2.Y=0mm" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mm|Location2.X=0mm|Location1.Y=0mm|Location2.Y=0mm">Micro-Segment: Region (0 hole(s)) Keep-Out Layer P1(0mm,0mm) P2(0mm,0mm)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mm|Location2.X=0mm|Location1.Y=0mm|Location2.Y=0mm" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mm|Location2.X=0mm|Location1.Y=0mm|Location2.Y=0mm">Micro-Segment: Region (0 hole(s)) Keep-Out Layer P1(0mm,0mm) P2(0mm,0mm)</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDRSXHI5MCMNBRBSOYP3NPJKIU5D3BXIJT2CFH4YNXJAIVHLON31PH"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="health">Self-Intersecting Regions</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=129.489mm|Location2.X=129.489mm|Location1.Y=40.843mm|Location2.Y=40.843mm" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=129.489mm|Location2.X=129.489mm|Location1.Y=40.843mm|Location2.Y=40.843mm">Self-intersection: Polygon Pour Cutout (Bottom Layer)Region (0 hole(s)) Bottom Layer (129.489mm,40.843mm)</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDCMDI1GFKOUOUIDITSJ2Y4YN1VP0HN2PGBDE2A2CDVE1N3CIFTKEK"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="health">Shelved/Modified Polygons</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=961mil|Location2.X=6060mil|Location1.Y=809.5mil|Location2.Y=4998.11mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=961mil|Location2.X=6060mil|Location1.Y=809.5mil|Location2.Y=4998.11mil|Absolute=True">Shelved/Modified Polygon: Polygon Shelved  (NONET_L01_P009) on Top Layer (64.783mm,53.157mm)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4478mil|Location2.X=4770mil|Location1.Y=3133mil|Location2.Y=3739mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4478mil|Location2.X=4770mil|Location1.Y=3133mil|Location2.Y=3739mil|Absolute=True">Shelved/Modified Polygon: Polygon Shelved  (NONET_L01_P002) on Top Layer (93.066mm,66.675mm)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4121mil|Location2.X=4434mil|Location1.Y=3103mil|Location2.Y=3773mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4121mil|Location2.X=4434mil|Location1.Y=3103mil|Location2.Y=3773mil|Absolute=True">Shelved/Modified Polygon: Polygon Shelved  (NONET_L01_P003) on Top Layer (84.264mm,66.726mm)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=961mil|Location2.X=6060mil|Location1.Y=808mil|Location2.Y=4998.11mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=961mil|Location2.X=6060mil|Location1.Y=808mil|Location2.Y=4998.11mil|Absolute=True">Shelved/Modified Polygon: Polygon Shelved  (NONET_L02_P010) on Bottom Layer (64.783mm,53.138mm)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5390mil|Location2.X=5937mil|Location1.Y=2871mil|Location2.Y=3144.465mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5390mil|Location2.X=5937mil|Location1.Y=2871mil|Location2.Y=3144.465mil|Absolute=True">Shelved/Modified Polygon: Polygon Shelved  (NONET_L02_P006) on Bottom Layer (119.469mm,55.797mm)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4799mil|Location2.X=5129.37mil|Location1.Y=2554mil|Location2.Y=3012mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4799mil|Location2.X=5129.37mil|Location1.Y=2554mil|Location2.Y=3012mil|Absolute=True">Shelved/Modified Polygon: Polygon Shelved  (NONET_L02_P005) on Bottom Layer (101.706mm,50.089mm)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4456mil|Location2.X=4930mil|Location1.Y=2568mil|Location2.Y=3323mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4456mil|Location2.X=4930mil|Location1.Y=2568mil|Location2.Y=3323mil|Absolute=True">Shelved/Modified Polygon: Polygon Shelved  (NONET_L02_P004) on Bottom Layer (94.818mm,54.216mm)</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

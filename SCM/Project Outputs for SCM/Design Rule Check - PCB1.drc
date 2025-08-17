@@ -1,0 +1,65 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\amira\OneDrive\Desktop\altioum project\project\SCM\SCM\PCB1.PcbDoc
+Date     : 8/17/2025
+Time     : 9:53:00 PM
+
+WARNING: Design contains shelved or modified (but not repoured) polygons. The result of DRC is not correct. Recommended to restore/repour all polygons and proceed with DRC again
+   Polygon named: NONET_L01_P009 In net GND On Top Layer
+   Polygon named: NONET_L01_P002 In net NetB1_1 On Top Layer
+   Polygon named: NONET_L01_P003 In net +5v SW On Top Layer
+   Polygon named: NONET_L02_P010 In net GND On Bottom Layer
+   Polygon named: NONET_L02_P006 In net VOUT On Bottom Layer
+   Polygon named: NONET_L02_P005 In net SW On Bottom Layer
+   Polygon named: NONET_L02_P004 In net Boost_in On Bottom Layer
+   Polygon named: NONET_L01_P009 In net GND On Top Layer
+   Polygon named: NONET_L01_P002 In net NetB1_1 On Top Layer
+   Polygon named: NONET_L01_P003 In net +5v SW On Top Layer
+   Polygon named: NONET_L02_P010 In net GND On Bottom Layer
+   Polygon named: NONET_L02_P006 In net VOUT On Bottom Layer
+   Polygon named: NONET_L02_P005 In net SW On Bottom Layer
+   Polygon named: NONET_L02_P004 In net Boost_in On Bottom Layer
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+   Violation between Un-Routed Net Constraint: Net CH_GND Between Track (36.437mm,26.099mm)(36.449mm,26.111mm) on Top Layer And Track (37.555mm,23.52mm)(37.555mm,26.099mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetIC1_5 Between Track (52.215mm,76.2mm)(52.528mm,75.704mm) on Top Layer And Track (51.671mm,77.169mm)(52.434mm,77.169mm) on Top Layer 
+Rule Violations :2
+
+Processing Rule : Routing Topology Rule(Topology=Shortest) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+PCB Health Issue Category : Zero Area Regions
+   Zero area region: Region (0 hole(s)) Keep-Out Layer (0mm,0mm)
+   Zero area region: Region (0 hole(s)) Keep-Out Layer (0mm,0mm)
+Issues :2
+
+PCB Health Issue Category : Micro-Segments (Board)
+   Micro-Segment: Region (0 hole(s)) Keep-Out Layer P1(0mm,0mm) P2(0mm,0mm)
+   Micro-Segment: Region (0 hole(s)) Keep-Out Layer P1(0mm,0mm) P2(0mm,0mm)
+   Micro-Segment: Region (0 hole(s)) Keep-Out Layer P1(0mm,0mm) P2(0mm,0mm)
+   Micro-Segment: Region (0 hole(s)) Keep-Out Layer P1(0mm,0mm) P2(0mm,0mm)
+   Micro-Segment: Region (0 hole(s)) Keep-Out Layer P1(0mm,0mm) P2(0mm,0mm)
+   Micro-Segment: Region (0 hole(s)) Keep-Out Layer P1(0mm,0mm) P2(0mm,0mm)
+Issues :6
+
+PCB Health Issue Category : Self-Intersecting Regions
+   Self-intersection: Polygon Pour Cutout (Bottom Layer)Region (0 hole(s)) Bottom Layer (129.489mm,40.843mm)
+Issues :1
+
+PCB Health Issue Category : Shelved/Modified Polygons
+   Shelved/Modified Polygon: Polygon Shelved  (NONET_L01_P009) on Top Layer (64.783mm,53.157mm)
+   Shelved/Modified Polygon: Polygon Shelved  (NONET_L01_P002) on Top Layer (93.066mm,66.675mm)
+   Shelved/Modified Polygon: Polygon Shelved  (NONET_L01_P003) on Top Layer (84.264mm,66.726mm)
+   Shelved/Modified Polygon: Polygon Shelved  (NONET_L02_P010) on Bottom Layer (64.783mm,53.138mm)
+   Shelved/Modified Polygon: Polygon Shelved  (NONET_L02_P006) on Bottom Layer (119.469mm,55.797mm)
+   Shelved/Modified Polygon: Polygon Shelved  (NONET_L02_P005) on Bottom Layer (101.706mm,50.089mm)
+   Shelved/Modified Polygon: Polygon Shelved  (NONET_L02_P004) on Bottom Layer (94.818mm,54.216mm)
+Issues :7
+
+
+Violations Detected : 2
+Waived Violations : 0
+PCB Health Issues : 16
+Time Elapsed        : 00:00:01

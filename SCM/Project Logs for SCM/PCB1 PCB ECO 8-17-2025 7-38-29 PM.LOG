@@ -1,0 +1,49 @@
+Change Component Footprint: Designator=R2 Old Footprint=Resistor_SMD_0603 (1608) New Footprint=Resistor_SMD_0201 (0603)
+Change Component Footprint: Designator=R3 Old Footprint=Resistor_SMD_0603 (1608) New Footprint=Resistor_SMD_0201 (0603)
+Change Component Footprint: Designator=R4 Old Footprint=Resistor_SMD_0603 (1608) New Footprint=Resistor_SMD_0201 (0603)
+Change Component Footprint: Designator=R6 Old Footprint=Resistor_SMD_0603 (1608) New Footprint=Resistor_SMD_0201 (0603)
+Change Component Footprint: Designator=R7 Old Footprint=Resistor_SMD_0603 (1608) New Footprint=Resistor_SMD_0201 (0603)
+Change Component Footprint: Designator=R8 Old Footprint=Resistor_SMD_0603 (1608) New Footprint=Resistor_SMD_0201 (0603)
+Change Component Footprint: Designator=R9 Old Footprint=Resistor_SMD_0603 (1608) New Footprint=Resistor_SMD_0201 (0603)
+Change Component Footprint: Designator=R10 Old Footprint=Resistor_SMD_0603 (1608) New Footprint=Resistor_SMD_0201 (0603)
+Change Component Footprint: Designator=R11 Old Footprint=Resistor_SMD_0603 (1608) New Footprint=Resistor_SMD_0201 (0603)
+Change Component Footprint: Designator=R12 Old Footprint=Resistor_SMD_0603 (1608) New Footprint=Resistor_SMD_0201 (0603)
+Change Component Footprint: Designator=R13 Old Footprint=Resistor_SMD_0603 (1608) New Footprint=Resistor_SMD_0201 (0603)
+Change Component Footprint: Designator=R14 Old Footprint=Resistor_SMD_0603 (1608) New Footprint=Resistor_SMD_0201 (0603)
+Change Component Footprint: Designator=R15 Old Footprint=Resistor_SMD_0603 (1608) New Footprint=Resistor_SMD_0201 (0603)
+Change Component Footprint: Designator=R16 Old Footprint=Resistor_SMD_0603 (1608) New Footprint=Resistor_SMD_0201 (0603)
+Change Component Footprint: Designator=R17 Old Footprint=Resistor_SMD_0603 (1608) New Footprint=Resistor_SMD_0201 (0603)
+Change Component Footprint: Designator=R18 Old Footprint=Resistor_SMD_0603 (1608) New Footprint=Resistor_SMD_0201 (0603)
+Change Component Footprint: Designator=R105 Old Footprint=Resistor_SMD_0603 (1608) New Footprint=Resistor_SMD_0201 (0603)
+Change Component Footprint: Designator=R106 Old Footprint=Resistor_SMD_0603 (1608) New Footprint=Resistor_SMD_0201 (0603)
+Change Component Footprint: Designator=R108 Old Footprint=Resistor_SMD_0603 (1608) New Footprint=Resistor_SMD_0201 (0603)
+Change Component Footprint: Designator=R109 Old Footprint=Resistor_SMD_0603 (1608) New Footprint=Resistor_SMD_0201 (0603)
+Change Component Footprint: Designator=R110 Old Footprint=Resistor_SMD_0603 (1608) New Footprint=Resistor_SMD_0201 (0603)
+Change Component Footprint: Designator=R120 Old Footprint=Resistor_SMD_0603 (1608) New Footprint=Resistor_SMD_0201 (0603)
+Change Component Footprint: Designator=R121 Old Footprint=Resistor_SMD_0603 (1608) New Footprint=Resistor_SMD_0201 (0603)
+Change Component Footprint: Designator=R5 Old Footprint=SMD-0805-RES New Footprint=Resistor_SMD_0201 (0603)
+Change Component Footprint: Designator=R1 Old Footprint=SMD-0805-RES New Footprint=Resistor_SMD_0603 (1608)
+Change Component Comment : Designator=UP1 Old Comment=3V3 New Comment=LM1117IMP-3V3/RT9001-33G
+Change Component Comment : Designator=UP2 Old Comment=3V3 New Comment=LM1117IMP-5.0
+Change Component Comment : Designator=R18 Old Comment=10K New Comment=3K3
+Change Component Comment : Designator=C6 Old Comment=10uf New Comment=22uf
+Change Component Comment : Designator=C25 Old Comment=10uf New Comment=22uf
+Change Component Comment : Designator=C21 Old Comment=10uF New Comment=100nF
+Change Component Comment : Designator=L1 Old Comment=15uH New Comment=22uH
+Change Component Comment : Designator=R6 Old Comment=40K2 New Comment=40K2 1%
+Change Component Comment : Designator=R11 Old Comment=43K New Comment=43K 1%
+Change Component Comment : Designator=R5 Old Comment=215K 1% New Comment=215K1%
+Change Component Comment : Designator=U8 Old Comment==VALUE New Comment=W5500
+Change Component Comment : Designator=J2 Old Comment=B2B-XH-A(LF)(SN) New Comment=XH
+Change Component Comment : Designator=Q8 Old Comment=C945 New Comment=BC817
+Change Component Comment : Designator=F1 Old Comment=F=3.0 A New Comment=FUSE Socket
+Change Component Comment : Designator=F2 Old Comment=F=3.0 A New Comment=FUSE Socket
+Change Component Comment : Designator=J11 Old Comment=JR-OPN New Comment=Jumper
+Change Component Comment : Designator=D8 Old Comment=LED603GRN New Comment=GREEN LED
+Change Component Comment : Designator=D28 Old Comment=LED603GRN New Comment=GREEN LED
+Change Component Comment : Designator=D7 Old Comment=LED603GRN New Comment=RED LED
+Change Component Comment : Designator=D27 Old Comment=LED603GRN New Comment=RED LED
+Change Component Comment : Designator=U4 Old Comment=M66FA-04-STDN New Comment=M66
+Change Component Comment : Designator=B1 Old Comment=MP4462DN-Z-LF New Comment=MP4462DN
+Change Component Comment : Designator=J19 Old Comment=SD_MICRO New Comment=Micro SD CARD HEADER
+Change Component Comment : Designator=VR1 Old Comment=xxDxxx New Comment=7D270K
